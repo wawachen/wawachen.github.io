@@ -1,42 +1,106 @@
----
-layout: page
-description: "Phd student, The University of Sheffield | Robotics, Reinforcement learning "
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic homepage of Jingyu Chen. Researcher at the Institute of Software, Chinese Academy of Sciences. Ph.D. in Robotics from the University of Sheffield.">
+  <title>Jingyu Chen</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
+  <script defer src="assets/js/data.js?v=19"></script>
+  <script defer src="assets/js/main.js?v=15"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="intro" id="top">
+      <div class="intro-text">
+        <h1>Jingyu Chen</h1>
+        <p class="affiliation">Researcher · <a href="https://www.iscas.ac.cn/" target="_blank" rel="noopener">Institute of Software, Chinese Academy of Sciences</a></p>
+        <p>
+          I am a researcher at the Institute of Software, Chinese Academy of Sciences. I completed
+          my Ph.D. in Robotics at the <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener">University of Sheffield</a>,
+          supervised by Dr. John Oyekan and Prof. Lyudmila Mihaylova.
+        </p>
+        <p>My research focuses on robotics, world model and reinforcement learning.</p>
+        <ul class="research-lines">
+          <li>Interactive world models for long-horizon tasks</li>
+          <li>Embodied navigation and obstacle-avoidance models for unmanned aerial vehicles</li>
+          <li>Fast point-cloud occupancy generation for large-scale scenes</li>
+        </ul>
+        <p>
+          Before my Ph.D., I received an M.Eng. in Electrical and Electronic Engineering from the
+          University of Leicester and an M.Sc. in Robotics from the University of Sheffield.
+        </p>
+        <p class="contact-links">
+          <a href="mailto:736499127wawa@gmail.com">Email</a>
+          <a href="https://github.com/wawachen" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=j63_EA0AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/chen-jingyu-50944518a" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.zhihu.com/people/oliver-chen-47/posts" target="_blank" rel="noopener">Zhihu</a>
+        </p>
+        <p class="impact" id="impact" hidden>
+          <span><strong id="impactCitations">—</strong> citations</span>
+          <span><strong id="impactH">—</strong> h-index</span>
+          <span><strong id="impactI10">—</strong> i10-index</span>
+          <a id="impactSource" href="https://openalex.org/A5100338184" target="_blank" rel="noopener">OpenAlex</a>
+        </p>
+      </div>
+      <div class="profile">
+        <img src="assets/images/profile.jpg" alt="Portrait of Jingyu Chen" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <div class="profile-fallback">Your<br>Photo</div>
+      </div>
+    </header>
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+    <nav class="section-nav" aria-label="Page sections">
+      <a href="#news">News</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#service">Service</a>
+    </nav>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    <section id="news">
+      <div class="section-kicker">What's New</div>
+      <h2>News</h2>
+      <ul id="newsList" class="news-list"></ul>
+    </section>
+
+    <section id="experience">
+      <div class="section-kicker">Industry & Research</div>
+      <h2>Experience</h2>
+      <div id="experienceList" class="experience-list"></div>
+    </section>
+
+    <section id="publications">
+      <div class="section-kicker">Research</div>
+      <h2>Publications</h2>
+      <p class="legend"><span>*</span> Equal contribution · <span>†</span> Corresponding author</p>
+      <div id="publicationList"></div>
+    </section>
+
+    <section id="education">
+      <div class="section-kicker">Background</div>
+      <h2>Education</h2>
+      <div id="educationList" class="plain-list"></div>
+    </section>
+
+    <section id="projects">
+      <div class="section-kicker">Master's</div>
+      <h2>Projects</h2>
+      <div id="projectList" class="project-list"></div>
+    </section>
+
+    <section id="service">
+      <div class="section-kicker">Community</div>
+      <h2>Academic Service</h2>
+      <div id="serviceList" class="plain-list"></div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Jingyu Chen</span>
+      <span>Last updated: <span id="updated">November 2026</span></span>
+      <span>Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></span>
+    </footer>
+  </main>
+</body>
+</html>

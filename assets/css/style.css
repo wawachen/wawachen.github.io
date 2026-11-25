@@ -1,0 +1,98 @@
+/* Minimal academic homepage inspired by the reference layout. */
+:root {
+  --text: #252525;
+  --muted: #666;
+  --link: #1769aa;
+  --line: #e8e8e8;
+  --page-width: 940px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 18px; }
+body {
+  margin: 0; background: #fff; color: var(--text);
+  font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.62;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.page { width: min(var(--page-width), calc(100% - 44px)); margin: 36px auto 28px; }
+.intro { display: grid; grid-template-columns: minmax(0,1fr) 170px; gap: 34px; align-items: start; }
+h1 { font-size: 30px; line-height: 1.2; font-weight: 600; margin: 0 0 7px; letter-spacing: -.5px; }
+.affiliation { margin: 0 0 15px; color: #555; }
+.intro-text > p { margin: 0 0 11px; }
+.research-lines { margin: 0 0 11px; padding-left: 18px; }
+.research-lines li { margin: 2px 0; }
+.bio-note { color: var(--muted); }
+.profile { width: 155px; height: 185px; justify-self: end; }
+.profile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.profile-fallback { display: none; width: 100%; height: 100%; place-items: center; text-align: center; color: #777; background: #f0f0f0; border: 1px solid #ddd; font-size: 13px; }
+.contact-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 14px !important; }
+.impact { display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; margin: 10px 0 0; color: #555; font-size: 13px; }
+.impact strong { color: var(--text); font-size: 16px; font-weight: 600; }
+.impact a { font-size: 12px; }
+.contact-links a, .contact-links span { font-weight: 500; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 21px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin: 26px 0 30px; }
+.section-nav a { font-size: 13px; font-weight: 600; }
+section { margin: 0 0 33px; }
+h2 { font-size: 21px; line-height: 1.3; margin: 0 0 15px; font-weight: 600; letter-spacing: -.2px; }
+h3 { font-size: 15px; line-height: 1.4; margin: 0 0 5px; font-weight: 600; }
+.section-kicker { color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 2px; }
+.featured-list { display: grid; gap: 19px; }
+.featured-item { display: grid; grid-template-columns: 190px minmax(0,1fr); gap: 19px; align-items: start; }
+.featured-item.no-image { grid-template-columns: 1fr; }
+.featured-image, .pub-image { width: 100%; background: #f1f3f5; border: 1px solid #e7e7e7; overflow: hidden; }
+.featured-image { aspect-ratio: 16 / 9; }
+.featured-image img, .pub-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.image-placeholder { width: 100%; height: 100%; display: grid; place-items: center; color: #858585; font-size: 12px; text-align: center; padding: 8px; }
+.item-description { margin: 4px 0 7px; color: #3e3e3e; }
+.authors { font-size: 12px; color: #555; margin: 3px 0; }
+.venue { font-size: 12px; color: #555; margin: 3px 0 6px; }
+.resource-links { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; }
+.resource-links a { font-weight: 600; }
+.experience-list { display: grid; gap: 18px; }
+.experience-item { display: grid; grid-template-columns: auto 148px minmax(0,1fr); gap: 16px; align-items: center; }
+.experience-date { color: #666; font-size: 12px; }
+.experience-logo { height: 36px; width: auto; max-width: 260px; object-fit: contain; object-position: left center; }
+.experience-role { font-weight: 600; }
+.experience-detail { color: #555; font-size: 12px; }
+.legend { color: #777; font-size: 11px; margin: -7px 0 12px; }
+.legend span { color: var(--text); font-weight: 700; }
+.pub-year { font-size: 17px; font-weight: 600; margin: 19px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+.publication { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 17px; margin: 0 0 16px; align-items: start; }
+.publication.no-image { grid-template-columns: 1fr; }
+.pub-image { aspect-ratio: 16 / 10; }
+.pub-title { font-weight: 600; margin-bottom: 4px; }
+.pub-meta { font-size: 12px; color: #555; margin: 3px 0; }
+.pub-award { color: #9a5b00; font-weight: 600; }
+.work-list { display: grid; gap: 13px; }
+.work-item { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 17px; }
+.work-item.no-image { grid-template-columns: 1fr; }
+.work-thumb { aspect-ratio: 16/10; background: #f1f3f5; border: 1px solid #e7e7e7; }
+.work-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.news-list { margin: 0; padding-left: 20px; }
+.news-list li { padding: 2px 0 5px; }
+.news-date { color: #777; font-size: 12px; margin-right: 6px; white-space: nowrap; }
+.plain-list { display: grid; gap: 16px; }
+.plain-item strong { display: block; }
+.plain-item span { display: block; color: #555; font-size: 12px; }
+.edu-item { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: center; }
+.edu-crest { width: 46px; height: 56px; object-fit: contain; justify-self: center; }
+.project-list { display: grid; gap: 18px; }
+.project-item { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 16px; align-items: start; }
+.project-photo { display: block; width: auto; max-width: 168px; max-height: 112px; height: auto; margin-top: 8px; border: 1px solid #e7e7e7; background: #f1f3f5; object-fit: contain; object-position: left center; }
+footer { border-top: 1px solid var(--line); padding-top: 13px; margin-top: 38px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: #777; font-size: 11px; }
+@media (max-width: 650px) {
+  .page { width: calc(100% - 32px); margin-top: 23px; }
+  .intro { grid-template-columns: 1fr; gap: 17px; }
+  .profile { grid-row: 1; justify-self: start; width: 112px; height: 135px; }
+  h1 { font-size: 27px; }
+  .section-nav { gap: 10px 17px; margin: 22px 0 25px; }
+  .section-nav a { font-size: 12px; }
+  .featured-item, .publication, .work-item { grid-template-columns: 1fr; gap: 8px; }
+  .featured-image, .pub-image, .work-thumb { max-width: 360px; }
+  .experience-item { grid-template-columns: auto minmax(0,1fr); gap: 8px 12px; }
+  .experience-logo { grid-column: 1; grid-row: 1; height: 28px; max-width: 150px; }
+  .experience-date { grid-column: 2; grid-row: 1; align-self: center; }
+  .experience-body { grid-column: 1 / -1; grid-row: 2; }
+  .project-item { grid-template-columns: 1fr; gap: 2px; }
+  footer { flex-direction: column; gap: 4px; }
+}
